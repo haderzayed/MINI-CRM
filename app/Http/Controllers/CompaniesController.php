@@ -114,11 +114,7 @@ class CompaniesController extends Controller
                 $name=$logo->getClientOriginalName();
                 $data['logo']=$logo->storeAS('companies/'.$company->name,$name,'public');
             }
-
-            /*if ($request->hasFile('logo') && $logo->isValid()){
-                $name=$logo->getClientOriginalName();
-                $data['logo']=$logo->storeAS('companies/'.$company->name,$name,'public');
-            }*/
+            
             $company->update($data);
 
             return redirect()->route('companies.index')->with('success',trans('Companies.updated'));
