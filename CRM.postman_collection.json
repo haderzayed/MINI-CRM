@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "01da657e-9f29-4e6f-93ca-7b114bb28ae7",
+		"name": "CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "list-companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/companies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/companies/30",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "company4",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "company4@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "website_url",
+									"value": "https://www.cufoxageqa.us",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/Right Service/Downloads/images (3).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/companies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "company666",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/companies/54",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"companies",
+								"54"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ContactPeople",
+			"item": [
+				{
+					"name": "list-ContactPeople",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ContactPeople",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ContactPeople"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show-ContactPerson",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ContactPeople/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ContactPeople",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-ContactPerson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "salwe",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "gggg",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dassssssgg@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01020359392",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "29",
+									"type": "text"
+								},
+								{
+									"key": "linkedin_url",
+									"value": "https://www.cuzusyfary.cm",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ContactPeople",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ContactPeople"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit-ContactPerson",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "yaser",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "ahmed",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "khaled@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01020359392",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "linkedin_url",
+									"value": "https://www.cuzusyfary.cm",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ContactPeople/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ContactPeople",
+								"6"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "hadercomapny@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "website_url",
+									"value": "https://www.cufoxageqa.us",
+									"disabled": true
+								},
+								{
+									"key": "logo",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": " ",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-ContactPerson",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ContactPeople/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ContactPeople",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

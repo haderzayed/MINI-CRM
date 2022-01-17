@@ -7,6 +7,7 @@ use App\Http\Requests\CompanyRequest;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use App\Notifications\CompanyCreatedNotification;
+use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
@@ -14,6 +15,7 @@ use SebastianBergmann\Diff\Exception;
 
 class CompaniesController extends Controller
 {
+    use ResponseTrait;
     public function index()
     {
         $request = request();
@@ -49,8 +51,12 @@ class CompaniesController extends Controller
     }
     public function show($id)
     {
-        $company=Company::findOrFail($id);
+        $company=Company::find($id);
+        if(!$company){
+         return $this->returnError('this object not found',404);
+        }
         return new CompanyResource($company);
+
     }
 
     public function update(CompanyRequest $request, Company $company)
@@ -76,7 +82,6 @@ class CompaniesController extends Controller
     public function destroy(Company $company)
     {
         try{
-
             if($company->logo){
                 Storage::deleteDirectory('/public/companies/'.$company->name);
             }
