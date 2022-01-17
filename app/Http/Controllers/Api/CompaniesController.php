@@ -63,16 +63,19 @@ class CompaniesController extends Controller
     {
         try {
             $old_logo = $company->logo;
+
             $data = $request->except('logo');
             $logo = $request->file('logo');
             if ($request->hasFile('logo') && $logo->isValid()) {
                 $name = $logo->getClientOriginalName();
-                $data['logo'] = $logo->storeAS('companies/' . $company->name, $name, 'public');
+                $data['logo'] = $logo->storeAS('companies/'. $company->name, $name, 'public');
+            }
+
+            if (isset($old_logo) ) {
+
+                Storage::deleteDirectory('/public/companies/'.$company->name);
             }
             $company->update($data);
-            if (isset($old_logo) && isset($data['logo'])) {
-                Storage::disk('public')->delete($old_logo);
-            }
                 return new CompanyResource($company);
         } catch (Exception $exception) {
             return $exception->getMessage();
